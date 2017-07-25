@@ -1,5 +1,10 @@
 module.exports = {
 	user(user) {
-		return true;
+		if(typeof(user.password) === 'string' && user.password.trim() != '') {
+			if(typeof(user.email) === 'string' && user.email.trim() != '') {
+				return true;
+			}
+		}
+		return false;
 	}
 }
